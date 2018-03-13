@@ -1,28 +1,16 @@
 # BooksShopping
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.8.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 5.2.0. It enables the user to add and remove books from shopping cart and finally checkout the selected books.
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Using the application
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The homepage displays a grid of books. These books are fetched from the books service, since there is no backend yet to cater to the http requests. Add a book to the cart or remove it from cart on the homepage or click on a book to see the description and the stock remaining for the book . The 'add to cart' button is available on the description page as well. Finally go to the checkout page by clicking on the cart button on the home page to purchase the books.
 
-## Build
+## Known issues
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-# books-shopping-cart-frontendtask
+1. Adding only the last book in the first row of homepage, disrupts the page alignment.
+2. I am still working on the cart button on the home page to update the quantity of the items in the cart. So for now the cart button doesnot display the quantity of items in the cart.
