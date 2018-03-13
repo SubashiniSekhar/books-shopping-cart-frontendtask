@@ -1,0 +1,25 @@
+
+<div *ngIf="!isBookAddedInCart()">
+  <button
+    href="#"
+    class="btn btn-info btn-sm"
+    (click) = "addToCart()"
+  >
+    + in <span class="glyphicon glyphicon-shopping-cart"></span>
+  </button>
+</div>
+
+<div *ngIf="isBookAddedInCart()" >
+<span style=" background-color: #ABEBC6 ; width: 65px; height: 50px; ">
+
+    <span
+      class="glyphicon glyphicon-ok"> in </span>
+    <span class="glyphicon glyphicon-shopping-cart"></span>
+
+  <button class="glyphicon glyphicon-trash"
+          (click)="removeFromCart()"></button>
+</span>
+
+
+</div>
+

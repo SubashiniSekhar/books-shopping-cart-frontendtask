@@ -1,0 +1,14 @@
+.checkout{
+  font-size: 50px;
+  position: relative;
+  right: 100px;
+
+}
+
+.basket_quantity{
+  font-size: 30px;
+  position: absolute;
+  top: 1px;
+  right: -10px;
+  color: red;
+}

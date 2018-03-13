@@ -1,0 +1,54 @@
+
+<div class="container-fluid" *ngIf="cart.length==0">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="alert alert-warning">
+         Your basket is empty !!
+      </div>
+      <button class="btn btn-primary"
+              routerLink="/">Buy some books</button>
+    </div>
+  </div>
+
+</div>
+
+<div class="container-fluid" *ngIf="cart.length > 0">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="alert alert-success">
+        Items in your basket :
+      </div>
+  </div>
+  </div>
+  <div class="row" *ngFor="let book of cart">
+    <div class="col-sm-6">
+    <app-book  page_type="checkout_page"
+              [book_in_cart]= "book"
+    ></app-book>
+    </div>
+     <div class="col-sm-2">
+    <button (click)="deleteBookFromCart(book)"> <span class="glyphicon glyphicon-trash"></span> </button>
+  </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-2>"></div>
+    <div class="col-sm-6">
+<h4>total cost </h4> <h3> {{getCartTotal() | currency:'EUR':true:'1.2-2'}}</h3>
+    </div>
+  </div>
+
+</div>
+
+
+<div *ngIf="cart.length>0">
+  <button class="btn btn-primary"
+          routerLink="/">Buy some more books</button>
+  <button class="btn btn-success"
+          (click)="resetCart()">Purchase books in cart </button>
+</div>
+
+<div class="alert alert-success" *ngIf="showSuccessfulPurchase">
+  you have purchased successfully !!
+</div>
+

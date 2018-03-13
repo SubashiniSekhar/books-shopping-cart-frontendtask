@@ -1,0 +1,44 @@
+<div *ngIf="page_type==='description_page'"
+     class="container-fluid">
+  <div class="row">
+    <div class="col-sm-6" style="margin-top: 20px">
+      <img src="{{book.pic}}" width="477" height="537">
+    </div>
+    <div class="col-sm-4" style="border: 2px solid lightblue; margin-top: 30px; margin-right: 100px">
+      <h3>{{book.name}}</h3>
+      <h6>by {{book.author}}</h6>
+      <h4> stock remaining : {{book.stock_remaining}}</h4>
+      <strong>{{book.description}}</strong>
+      <h4 style="color: red">{{book.price  | currency:'EUR':true:'1.2-2'}}</h4>
+
+      <add-to-cart [this_book]="book"></add-to-cart>
+
+    </div>
+  </div>
+  <div class="row" style="margin-top: 30px; margin-left: 25px">
+    <div class="col-sm-6">
+    <button routerLink="/"
+            class ="btn btn-primary"
+    >back to homepage</button>
+    </div>
+  </div>
+
+</div>
+
+<div *ngIf="page_type==='checkout_page'"
+     class="container-fluid">
+  <div class="row">
+    <div class="col-sm-6">
+
+          <img src="{{book_in_cart.pic}}" width="176" height="233">
+        </div>
+        <div class="col-sm-6">
+          <h1>{{book_in_cart.name}}</h1>
+          <h6>by {{book_in_cart.author}}</h6>
+          <h6>{{book_in_cart.price  | currency:'EUR':true:'1.2-2'}}</h6>
+
+    </div>
+  </div>
+
+</div>
+
